@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+    touch-action: manipulation;
+    /* Mencegah zoom/gulir saat main di hp */
+}
+
+body {
+    background: radial-gradient(circle at 20% 30%, #0a0f1e, #03050a);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    padding: 10px;
+    margin: 0;
+    color: #0ef;
+}
+
+.game-wrapper {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+}
+
+.cyber-card {
+    background: rgba(10, 20, 40, .65);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 255, .3);
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+canvas {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    background: #02030a;
+
+    border: 1px solid #0ef;
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, .5),
+        inset 0 0 10px rgba(0, 255, 255, .2);
+
+    display: block;
+}
+
+.score-badge {
+    padding: 6px 18px;
+    font-size: 1.6rem;
+    border-radius: 30px;
+    border: 1px solid #0ef;
+    color: #0ef;
+    letter-spacing: 3px;
+}
+
+.player-tag,
+.ai-tag {
+    font-size: .9rem;
+    padding: 5px 12px;
+    border-radius: 20px;
+    border: 1px solid;
+}
+
+.player-tag {
+    color: #ff00ff;
+    border-color: #ff00ff;
+}
+
+.ai-tag {
+    color: #ffaa00;
+    border-color: #ffaa00;
+}
+
+.control-footer {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem;
+    opacity: .7;
+}
+
+.neon-txt {
+    color: #fff;
+    text-shadow: 0 0 5px #0ef, 0 0 10px #0ef;
+}
+
+.glow-icon {
+    color: #0ef;
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 8px cyan);
+}
+
+/* TOUCH CONTROLLER - khusus mobile */
+.touch-zone-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.touch-zone {
+    flex: 1;
+
+    height: 65px;
+
+    border-radius: 16px;
+    border: 1px solid rgba(0, 255, 255, .5);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.8rem;
+    color: #0ef;
+
+    background: rgba(0, 255, 255, .05);
+
+    transition: .1s;
+}
+
+.touch-zone:active {
+    transform: scale(.95);
+    background: rgba(0, 255, 255, .3);
+}
+
+.touch-zone i {
+    font-size: 2.2rem;
+    filter: drop-shadow(0 0 10px cyan);
+}
+
+.start-btn {
+    border-color: #ffaa00;
+    color: #ffaa00;
+}
+
+@media (min-width:768px) {
+
+    .touch-zone-container {
+        display: none;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .score-badge {
+        font-size: 1.5rem;
+        padding: 5px 12px;
+    }
+
+    .player-tag {
+        font-size: 1rem;
+    }
+}
